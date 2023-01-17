@@ -30,7 +30,7 @@ router.get('/reset-password/:userEmail', async (req, res) => {
     const userExist = await getByEmail(userEmail);
     if (userExist) {
         let token = tokenToResetPassword(userExist);
-        let link = 'http://localhost:4200/recuperar-contraseña/' + token;
+        let link = 'https://app-protectora.netlify.app/recuperar-contraseña/' + token;
 
         sendMail(
             userEmail,
